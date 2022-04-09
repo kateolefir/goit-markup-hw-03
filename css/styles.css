@@ -5,6 +5,11 @@
   --button-color: #f5f4fa;
   --primary-white-color: #ffffff;
   --bg-footer-color: #2f303a;
+  --bg-secondry-color: #f5f4fa;
+}
+
+header {
+  border-bottom: 1px solid #ececec;
 }
 
 body {
@@ -14,20 +19,44 @@ body {
   font-size: 14px;
   line-height: 1.714;
   letter-spacing: 0.03em;
+  width: 1600px;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 /*Герой страницы "Студия"*/
 .hero {
+  margin: 0;
+  width: 1600px;
+  height: 600px;
+  text-align: center;
   background-color: var(--bg-footer-color);
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
 .hero-title {
   color: var(--primary-white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  padding: 200px 452px 30px 452px;
 }
 .hero .button {
   background-color: var(--accent-color);
@@ -35,12 +64,18 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.875;
-  text-align: center;
   letter-spacing: 0.06em;
 }
 
-li {
+ul {
+  padding: 0;
+  margin: 0;
   list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 /*Цвет заголовков*/
@@ -55,6 +90,7 @@ li {
   color: var(--primary-title-color);
   font-weight: 700;
   text-transform: uppercase;
+  padding-bottom: 10px;
 }
 .title-work {
   color: var(--primary-title-color);
@@ -62,12 +98,15 @@ li {
   font-size: 36px;
   line-height: 1.167;
   text-align: center;
+  padding-bottom: 50px;
 }
 .team .title {
   color: var(--primary-title-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.1875;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 /*Скрытые строки и маркеры*/
@@ -89,6 +128,8 @@ a {
 }
 .team .text {
   line-height: 1.1875;
+  padding-bottom: 30px;
+  text-align: center;
 }
 
 /*Логотип*/
@@ -98,6 +139,8 @@ a {
   font-size: 26px;
   line-height: 1.192;
   font-weight: 700;
+  padding-top: 24px;
+  padding-bottom: 25px;
 }
 .logo .studio {
   color: var(--primary-title-color);
@@ -116,6 +159,8 @@ a {
   line-height: 1.625;
   font-weight: 500;
   letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 .site-nav a {
   color: var(--primary-title-color);
@@ -139,17 +184,23 @@ a {
 /*buttons "Портфолио"*/
 
 .button {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 6px 22px;
+
   background-color: var(--button-color);
   border-color: transparent;
   cursor: pointer;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.625;
+  text-align: center;
 }
 
 .button:hover,
 .button:focus {
-  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
 }
 
 .button.primary {
@@ -157,9 +208,21 @@ a {
   color: var(--primary-white-color);
 }
 
+.container .button-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.button-list .item:not(:last-child) {
+  margin-right: 8px;
+}
+
 /*footer*/
 footer {
   background-color: var(--bg-footer-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .contacts .map a {
   color: var(--primary-white-color);
@@ -172,4 +235,86 @@ footer {
 address .contacts {
   font-weight: 400;
   line-height: 2;
+}
+
+/*размещение header*/
+.nav-flex {
+  display: flex;
+  align-items: center;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+.header-nav .site-nav {
+  display: flex;
+  margin-left: 93px;
+}
+.nav-flex .contacts {
+  display: flex;
+  margin-left: auto;
+}
+.header-nav .item:not(:last-child) {
+  margin-right: 50px;
+}
+.nav-flex .link:not(:last-child) {
+  margin-right: 50px;
+}
+
+/*размещение "Особенности"*/
+.features {
+  display: flex;
+  flex-wrap: wrap;
+}
+.features .item {
+  width: 270px;
+}
+.features .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+/*размещение "Чем мы занимаемся"*/
+.work {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+/*размещение "Наша команда"*/
+.team {
+  display: flex;
+  flex-wrap: wrap;
+}
+.team .item:not(:last-child) {
+  margin-right: 30px;
+}
+.team .photo {
+  padding-bottom: 30px;
+}
+section.section.bgr {
+  background-color: var(--bg-secondry-color);
+}
+/*размещение списка в Портфолио*/
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.portfolio-list .item {
+  margin: 15px;
+  flex-basis: calc(100% / 3 - 30px);
+}
+
+.portfolio-list .text {
+  margin-top: 4px;
+}
+
+.portfolio-border {
+  border: 1px solid #eeeeee;
+  border-top: transparent;
+  padding: 20px 24px;
 }
